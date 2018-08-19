@@ -1,0 +1,30 @@
+$def with(users, message)
+$var username: $users['username'].split('!')[0]
+$var privilege: $users['privilege']
+<h3>
+    Two Step Authenticator
+</h3>
+
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Warning </strong> $message
+    </div>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Username</label>
+        <input readonly id="username" type="text" class="form-control" name="username" size="30" value="$users.username.split('!')[0]"/>
+    </div>
+
+    <div class="form-group">
+        <label>Authenticator code</label>
+        <input required id="authenticator" type="number" class="form-control" name="authenticator" size="6"/>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span class="glyphicon glyphicon-save"></span> Save</button>
+    </div>
+</form>
+<br>
+<br>

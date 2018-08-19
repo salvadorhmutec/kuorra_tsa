@@ -1,0 +1,53 @@
+$def with(users, message)
+<h3>
+    <a href="/users">Users</a>
+</h3>
+<h2>Please download Google Authenticator or save the picture firts</h2>
+
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Warning </strong> $message
+    </div>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Username</label>
+        <input readonly id="username" type="text" class="form-control" name="username" size="30" value="$users.username.split('!')[0]"/>
+    </div>
+
+    <p>
+        Please Download 
+        <a href="https://play.google.com/store/apps/details?id=com.azure.authenticator&hl=es_419">Microsoft Authenticator </a> or
+        <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=es">Google Authenticator</a>
+        and config before activate Two Step Authenticator,
+
+    </p>
+    
+    <img src="../../static/qr/output.png" width="200px" height="200px">
+
+    <div class="form-group">
+        <label>Two step authenticator</label>
+        $if users.two_step_authenticator == 0:
+             <div class="radio">
+                <label><input type="radio" name="two_step_authenticator" value=0 checked>No</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="two_step_authenticator" value=1>Yes</label>
+            </div>
+
+        $else:
+             <div class="radio">
+                <label><input type="radio" name="two_step_authenticator" value=0>No</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="two_step_authenticator" value=1 checked>Yes</label>
+            </div>
+    </div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span class="glyphicon glyphicon-save"></span> Save</button>
+    </div>
+</form>
+<br>
+<br>
