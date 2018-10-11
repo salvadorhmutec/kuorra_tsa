@@ -1,4 +1,4 @@
-from . import config
+import application.controllers.main.config as config
 import app
 import hashlib
 from otpauth import OtpAuth

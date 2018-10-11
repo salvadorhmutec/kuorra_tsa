@@ -1,7 +1,7 @@
 """
     Class for delete users
 """
-import config
+import application.controllers.users.config as config
 import app
 
 

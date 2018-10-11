@@ -1,7 +1,7 @@
 """
     Class for change the password
 """
-import config
+import application.controllers.main.config
 import hashlib
 from otpauth import OtpAuth
 import app

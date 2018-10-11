@@ -1,7 +1,7 @@
 """
     Class for show a user detail
 """
-from . import config
+import application.controllers.users.config as config
 import app
 import qrcode
 from otpauth import OtpAuth

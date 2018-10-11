@@ -1,7 +1,7 @@
 """
     Class for show the users list
 """
-from . import config
+import application.controllers.users.config as config
 import app
 
 
