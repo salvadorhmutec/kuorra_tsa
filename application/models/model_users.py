@@ -68,12 +68,12 @@ def insert_users(username, password, privilege, status, name, email, other_data,
 
 
 def edit_users(username, password, privilege, status, name, email, other_data, user_hash, change_pwd):
-    try:
-        """
+    """
         update users set password=$password, privilege=$privilege, status=$status, name=$name,
             email=$email, other_data=$other_data, user_hash=$user_hash, change_pwd=$change_pwd 
             where username=$username;
-        """
+    """
+    try:
         return db.update('users',
             username=username,
             password=password,
