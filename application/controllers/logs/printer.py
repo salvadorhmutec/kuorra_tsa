@@ -23,3 +23,4 @@ class Printer:
         for row in result:
             row.username = config.make_secure_val(str(row.username))
         return config.render.printer(result)
+        

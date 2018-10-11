@@ -59,4 +59,3 @@ class Atsa:
             return config.render.atsa(result, message) # render chage_pwd.html
         else:
             raise config.web.seeother('/users')
-

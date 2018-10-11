@@ -28,3 +28,4 @@ def check_secure_val(h):
     val = h.split('!')[0]
     if h == make_secure_val(val):
         return val
+        

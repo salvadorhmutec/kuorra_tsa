@@ -34,3 +34,4 @@ def create_tsa(username, user_hash):
     f = open("static/qr/output.png", "wb")
     img.save(f)
     f.close()
+    
